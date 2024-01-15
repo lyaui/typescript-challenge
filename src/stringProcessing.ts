@@ -9,5 +9,9 @@
  * @returns - 回傳轉換後的大寫字串
  */
 export function toUpperCase(str: string): string {
-    // 請在此處寫下你的程式碼
+  let result = '';
+  for (let i = 0; i <= str.length - 1; i++) {
+    result = result + str[i].toUpperCase();
+  }
+  return result;
 }
