@@ -7,3 +7,22 @@
 
 // 請在下方寫下你的程式碼
 
+export async function fetchData<
+  T extends {
+    id: number;
+    title: string;
+  },
+>(url: string) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('failed');
+    const data = (await res.json()) as unknown;
+
+    return data as T;
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(`Error fetching data: ${error.message}`);
+      throw error;
+    }
+  }
+}
