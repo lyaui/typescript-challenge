@@ -5,5 +5,25 @@
  * @returns - 回傳包含所有唯一元素的新陣列
  */
 export function uniqueElements(array: number[]): number[] {
-    // 請在此處寫下你的程式碼
+  /* const counter: Record<string, number> = {};
+  let result: number[] = [];
+
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    counter[element] = counter[element] ? counter[element] + 1 : 0;
+  }
+
+  for (let key in counter) {
+    const element = +key;
+
+    if (element > result[result.length - 1]) {
+      result.push(element);
+    } else {
+      result.unshift(element);
+    }
+  }
+
+  return result; */
+
+  return [...new Set(array)];
 }
